@@ -1,11 +1,11 @@
-import styles from "./HeroStyles.module.css"; // Fixed typo in import
-import heroImage from "../../assets/heroImage.png";
-import themeIcon from "../../assets/sun.svg";
-import twitterIcon from "../../assets/twitter-light.svg";
-import githubIcon from "../../assets/github-light.svg";
-import linkedinIcon from "../../assets/linkedin-light.svg";
-import CV from "../../assets/cv.pdf"
-import { useTheme } from "../../common/ThemeContext";
+import styles from "./HeroStyles.module.css";
+import heroImage from "../assets/heroImage.png";
+import themeIcon from "../assets/sun.svg";
+import twitterIcon from "../assets/twitter-light.svg";
+import githubIcon from "../assets/github-light.svg";
+import linkedinIcon from "../assets/linkedin-light.svg";
+import CV from "../assets/cv.pdf"
+import { useTheme } from "../common/ThemeContext";
 
 function Hero() {
   const { theme, toggleTheme } = useTheme();

@@ -1,22 +1,16 @@
-import "./App.css";
-import Hero from "./sections/Hero/Hero";
+import Header from "./components/Header/Header.jsx"
+import Hero from "./components/Hero.jsx"
+import CoreConcepts from "./components/CoreConcepts.jsx"
 import { CORE_CONCEPTS } from "./data.js";
 
-function CoreConcepts({imagePath, title, description}) {
-  return (
-    <div>
-      <img src={imagePath} />
-      <h3>{title}</h3>
-      <p>{description}</p>
-    </div>
-  );
-}
 
 function App() {
   return (
     <div>
-      <Hero />
+      <Header/>
 
+      <Hero />
+      
       <section id="coreConcepts">
         <h2>Principales Caracteristicas</h2>
         <div>
