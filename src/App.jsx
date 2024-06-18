@@ -2,6 +2,7 @@ import Header from "./components/Header/Header.jsx"
 import Hero from "./components/Hero.jsx"
 import CoreConcepts from "./components/CoreConcepts/CoreConcepts.jsx"
 import { CORE_CONCEPTS } from "./data.js";
+import TabButton from "./components/TabButton/TabButton.jsx";
 
 
 function App() {
@@ -20,6 +21,13 @@ function App() {
           <CoreConcepts {...CORE_CONCEPTS[3]}/>
 
         </div>
+        
+        <menu>
+          <TabButton>Componentes</TabButton>
+          <TabButton>Jsx</TabButton>
+          <TabButton>Props</TabButton>
+          <TabButton>Estados</TabButton>
+        </menu>
 
       </section>
     </div>
