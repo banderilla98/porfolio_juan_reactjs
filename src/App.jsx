@@ -1,12 +1,12 @@
 import Header from "./components/Header/Header.jsx";
-import Hero from "./components/Hero.jsx";
+import Hero from "./components/Hero/Hero.jsx";
 import CoreConcepts from "./components/CoreConcepts/CoreConcepts.jsx";
 import { CORE_CONCEPTS } from "./data.js";
 import TabButton from "./components/TabButton/TabButton.jsx";
 
 function App() {
-  function handleClickMenu() {
-    return console.log("Clickeando aqui con la funcion handle click");
+  function handleClickMenu(selectedButton) {
+    return console.log(`Estas pulsando el boton... ${selectedButton}`);
   }
 
   return (
@@ -28,10 +28,10 @@ function App() {
       <section id="reactExamples">
         <h2>Ejemplos React</h2>
         <menu>
-          <TabButton onClick={handleClickMenu}>Componentes</TabButton>
-          <TabButton onClick={handleClickMenu}>JSX</TabButton>
-          <TabButton onClick={handleClickMenu}>Props</TabButton>
-          <TabButton onClick={handleClickMenu}>Estados</TabButton>
+          <TabButton onClick={()=>handleClickMenu("Componentes")}>Componentes</TabButton>
+          <TabButton onClick={()=>handleClickMenu("Jsx")}>JSX</TabButton>
+          <TabButton onClick={()=>handleClickMenu("Pros")}>Props</TabButton>
+          <TabButton onClick={()=>handleClickMenu("Estados")}>Estados</TabButton>
         </menu>
         Contenido dinamico
       </section>
