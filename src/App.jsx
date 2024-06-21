@@ -5,12 +5,12 @@ import { CORE_CONCEPTS } from "./data.js";
 import TabButton from "./components/TabButton/TabButton.jsx";
 
 function App() {
+  function handleClickMenu() {
+    return console.log("Clickeando aqui con la funcion handle click");
+  }
+
   return (
     <div>
-
-
-      
-
       <Header />
 
       <Hero />
@@ -28,11 +28,12 @@ function App() {
       <section id="reactExamples">
         <h2>Ejemplos React</h2>
         <menu>
-          <TabButton>Componentes</TabButton>
-          <TabButton>JSX</TabButton>
-          <TabButton>Props</TabButton>
-          <TabButton>Estados</TabButton>
+          <TabButton onClick={handleClickMenu}>Componentes</TabButton>
+          <TabButton onClick={handleClickMenu}>JSX</TabButton>
+          <TabButton onClick={handleClickMenu}>Props</TabButton>
+          <TabButton onClick={handleClickMenu}>Estados</TabButton>
         </menu>
+        Contenido dinamico
       </section>
     </div>
   );

@@ -1,12 +1,9 @@
 import "./TabButton.css";
 
-export default function TabButton({ children }) {
-  function handleClick() {
-    console.log("pulsando el boton alguno de ellos xd..");
-  }
+export default function TabButton({ children, onClick }) {
   return (
     <li>
-      <button onClick={handleClick}>{children}</button>
+      <button onClick={onClick}>{children}</button>
     </li>
   );
 }
