@@ -8,7 +8,7 @@ import { EXAMPLES } from "./data.js";
 
 function App() {
   
-  const [selectedTopic, setSelectedTopic] = useState("components"); //siempre debe ir primero de nuestro componente react hooks
+  const [selectedTopic, setSelectedTopic] = useState(null); //siempre debe ir primero de nuestro componente react hooks
 
 
   function handleClickMenu(selectedButton) {
@@ -17,6 +17,25 @@ function App() {
   }
 
   console.log("contenido renderizado");
+
+  let tabContent = (
+    <p>
+      Aquí se va a mostrar información sobre una característica de React, para
+      ello elige una opción del menú
+    </p>
+  );
+
+  if (selectedTopic) {
+    tabContent = (
+      <div id="tab-content">
+        <h3>{EXAMPLES[selectedTopic].title}</h3>
+        <p>{EXAMPLES[selectedTopic].description}</p>
+        <pre>
+          <code>{EXAMPLES[selectedTopic].code}</code>
+        </pre>
+      </div>
+    );
+  }
   
 
   return (
@@ -46,15 +65,7 @@ function App() {
         <h1>Contenido Dinamico</h1>
         {selectedTopic}
 
-        <div id="tab-content">
-          <h3>{EXAMPLES[selectedTopic].title}</h3>
-          <p>{EXAMPLES[selectedTopic].description}</p>
-          <pre>
-            <code>
-              {EXAMPLES[selectedTopic].code}
-            </code>
-          </pre>
-        </div>
+        {tabContent}
         
         <hr />
       </section>
