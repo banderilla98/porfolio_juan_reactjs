@@ -17,6 +17,8 @@ function App() {
   }
 
   console.log("contenido renderizado");
+  
+
   return (
     <div>
       <Header />
@@ -29,7 +31,7 @@ function App() {
           <CoreConcepts {...CORE_CONCEPTS[0]} />
           <CoreConcepts {...CORE_CONCEPTS[1]} />
           <CoreConcepts {...CORE_CONCEPTS[2]} />
-          <CoreConcepts {...CORE_CONCEPTS[3]} />
+          <CoreConcepts imagePath={CORE_CONCEPTS[3].imagePath}  title={CORE_CONCEPTS[3].title} description={CORE_CONCEPTS[3].description}/>
         </div>
       </section>
 
@@ -39,7 +41,7 @@ function App() {
           <TabButton onClick={()=>handleClickMenu("components")}>Componentes</TabButton>
           <TabButton onClick={()=>handleClickMenu("jsx")}>JSX</TabButton>
           <TabButton onClick={()=>handleClickMenu("props")}>Props</TabButton>
-          <TabButton onClick={()=>handleClickMenu("states")}>Estados</TabButton>
+          <TabButton onClick={()=>handleClickMenu("state")}>Estados</TabButton>
         </menu>
         <h1>Contenido Dinamico</h1>
         {selectedTopic}
