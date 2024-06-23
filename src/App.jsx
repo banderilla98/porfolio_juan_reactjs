@@ -57,10 +57,10 @@ function App() {
       <section id="reactExamples">
         <h2>Ejemplos React</h2>
         <menu>
-          <TabButton onClick={()=>handleClickMenu("components")}>Componentes</TabButton>
-          <TabButton onClick={()=>handleClickMenu("jsx")}>JSX</TabButton>
-          <TabButton onClick={()=>handleClickMenu("props")}>Props</TabButton>
-          <TabButton onClick={()=>handleClickMenu("state")}>Estados</TabButton>
+          <TabButton isSelected={selectedTopic === "components"} onClick={()=>handleClickMenu("components")}>Componentes</TabButton>
+          <TabButton isSelected={selectedTopic === "jsx"} onClick={()=>handleClickMenu("jsx")}>JSX</TabButton>
+          <TabButton isSelected={selectedTopic === 'props'} onClick={()=>handleClickMenu("props")}>Props</TabButton>
+          <TabButton isSelected={selectedTopic === 'state'} onClick={()=>handleClickMenu("state")}>Estados</TabButton>
         </menu>
         <h1>Contenido Dinamico</h1>
         {selectedTopic}
