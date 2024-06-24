@@ -98,6 +98,13 @@ main h2 {
   margin: 0;
 }
 
+#tab-content pre {
+  background-color: #141619;
+  border-radius: 1rem;
+  padding: 3rem;
+}
+
 #tab-content code {
   font-size: 1rem;
+  color: yellow;
 }
