@@ -1,9 +1,9 @@
-import "./TabButton.css";
+import './TabButton.css';
+export default function TabButton({children, title, ...events}) {
 
-export default function TabButton({ children, onClick, isSelected }) {
   return (
-    <li>
-      <button className={isSelected ? 'active' : ''} onClick={onClick}>{children}</button>
+    <li title={title}>
+      <button {...events}>{children}</button>
     </li>
   );
 }

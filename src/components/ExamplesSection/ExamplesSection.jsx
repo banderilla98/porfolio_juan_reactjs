@@ -1,69 +1,48 @@
-import TabButton from "../TabButton/TabButton";
-import Section from "../Section/Section";
+import TabButton from "../../components/TabButton/TabButton.jsx";
+import Section from "../Section/Section.jsx";
 import { useState } from "react";
-import { EXAMPLES } from "../../data";
+import { EXAMPLES } from "../../data.js";
+import './ExamplesSection.css';
 
-export default function ExamplesSection() {
-  const [selectedTopic, setSelectedTopic] = useState(null); //siempre debe ir primero de nuestro componente react hooks
-
-  function handleClickMenu(selectedButton) {
-    setSelectedTopic(selectedButton);
-    console.log(`Estas pulsando el boton... ${selectedTopic}`);
-  }
-
-  console.log("contenido renderizado");
-
-  let tabContent = (
-    <p>
-      Aquí se va a mostrar información sobre una característica de React, para
-      ello elige una opción del menú
-    </p>
-  );
-
-  if (selectedTopic) {
-    tabContent = (
-      <div id="tab-content">
-        <h3>{EXAMPLES[selectedTopic].title}</h3>
-        <p>{EXAMPLES[selectedTopic].description}</p>
-        <pre>
-          <code>{EXAMPLES[selectedTopic].code}</code>
-        </pre>
-      </div>
+export default function ExamplesSection(){
+    const [selectedTopic, setSelectedTopic] = useState(null);
+    function handleClickMenu(selectedButton) {
+      setSelectedTopic(selectedButton);
+      console.log(`Ey! Estas pulsando el botón ${selectedTopic}`);
+    }
+    console.log("El componente App esta siendo renderizado y ejecutado!!");
+  
+    let tabContent = (
+      <p>
+        Aquí se va a mostrar información sobre una característica de React, para
+        ello elige una opción del menú
+      </p>
     );
-  }
-
-  return (
-    <Section title={"Ejemplos React"} className="miClase" id="reactExamples">
-      <menu>
-        <TabButton
-          isSelected={selectedTopic === "components"}
-          onClick={() => handleClickMenu("components")}
-        >
-          Componentes
-        </TabButton>
-        <TabButton
-          isSelected={selectedTopic === "jsx"}
-          onClick={() => handleClickMenu("jsx")}
-        >
-          JSX
-        </TabButton>
-        <TabButton
-          isSelected={selectedTopic === "props"}
-          onClick={() => handleClickMenu("props")}
-        >
-          Props
-        </TabButton>
-        <TabButton
-          isSelected={selectedTopic === "state"}
-          onClick={() => handleClickMenu("state")}
-        >
-          Estados
-        </TabButton>
-      </menu>
-      <h1>Contenido Dinamico</h1>
-      {selectedTopic}
-      {tabContent}
-      <hr /> //linea normal line
+  
+    if (selectedTopic) {
+      tabContent = (
+        <div id="tab-content">
+          <h3>{EXAMPLES[selectedTopic].title}</h3>
+          <p>{EXAMPLES[selectedTopic].description}</p>
+          <pre>
+            <code>{EXAMPLES[selectedTopic].code}</code>
+          </pre>
+        </div>
+      );
+    }
+    return (
+    <Section title="Ejemplos React" id="reactExamples" className="miClase">
+        <menu>
+          <TabButton onClick={() => handleClickMenu("components")}>
+            Componentes
+          </TabButton>
+          <TabButton onClick={() => handleClickMenu("jsx")}>JSX</TabButton>
+          <TabButton onClick={() => handleClickMenu("props")}>Props</TabButton>
+          <TabButton onClick={() => handleClickMenu("state")}>
+            Estados
+          </TabButton>
+        </menu>
+        {tabContent}
     </Section>
-  );
+    );
 }
