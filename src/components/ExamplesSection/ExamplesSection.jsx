@@ -1,4 +1,5 @@
 import TabButton from "../TabButton/TabButton";
+import Section from "../Section/Section";
 import { useState } from "react";
 import { EXAMPLES } from "../../data";
 
@@ -32,8 +33,7 @@ export default function ExamplesSection() {
   }
 
   return (
-    <section id="reactExamples">
-      <h2>Ejemplos React</h2>
+    <Section title={"Ejemplos React"} className="miClase" id="reactExamples">
       <menu>
         <TabButton
           isSelected={selectedTopic === "components"}
@@ -64,6 +64,6 @@ export default function ExamplesSection() {
       {selectedTopic}
       {tabContent}
       <hr /> //linea normal line
-    </section>
+    </Section>
   );
 }

@@ -4,22 +4,14 @@ import CoreConceptsSection from "./components/CoreConceptsSection/CoreConceptsSe
 import ExamplesSection from "./components/ExamplesSection/ExamplesSection.jsx";
 
 function App() {
-  
-  
-  
-
   return (
     <>
       <Header />
 
       <Hero />
 
-      <CoreConceptsSection/>
-      <ExamplesSection/>
-
-      
-
-      
+      <CoreConceptsSection />
+      <ExamplesSection />
     </>
   );
 }
