@@ -14,10 +14,17 @@ export default function ExamplesSection() {
   console.log("El componente App esta siendo renderizado y ejecutado!!");
 
   let tabContent = (
+    <>
     <p>
       Aquí se va a mostrar información sobre una característica de React, para
       ello elige una opción del menú
     </p>
+    
+    <hr />
+
+    <p> Aqui nomas toy viendo si puedo aprender el tic tac toe del react documentation lol</p>
+
+    </>
   );
 
   if (selectedTopic) {
